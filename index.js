@@ -9,21 +9,16 @@ var favIconHtml = '<link rel="icon" type="image/png" href="./favicon-32x32.png" 
                   '<link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />'
 
 
-var setup = function(swaggerDoc, explorer, options, customCss, customfavIcon) {
+var setup = function(swaggerDoc, options) {
 	options = options || {};
-
-	// pass options as second param
-	if (typeof explorer === 'object') {
-	  options = explorer;
-  }
 
 	if (options.yaml) {
 	  swaggerDoc = yaml.parse(swaggerDoc);
   }
 
-  var explorerString = explorer ?  '' : '.swagger-ui .topbar .download-url-wrapper { display: none }';
-    customCss = explorerString + ' ' + customCss || explorerString;
-    customfavIcon = customfavIcon || false;
+  var explorerString = options.explorer ?  '' : '.swagger-ui .topbar .download-url-wrapper { display: none }';
+	var customCss = explorerString + ' ' + options.customCss || explorerString;
+	var customfavIcon = options.customfavIcon || false;
 	var html = fs.readFileSync(__dirname + '/indexTemplate.html');
     try {
     	fs.unlinkSync(__dirname + '/index.html');
