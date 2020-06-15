@@ -1,5 +1,5 @@
 {
-  "name": "swagger-ui-koa",
+  "name": "@bifot/swagger-ui-koa",
   "version": "1.0.0",
   "description": "Swagger UI Koa",
   "main": "./lib/index.js",
