@@ -1,13 +1,13 @@
-'use strict'
+'use strict';
 
 var fs = require('fs');
 var yaml = require('yamljs');
+var swaggerDist = require('swagger-ui-dist');
 
 var serveStatic = require('koa-static');
 
 var favIconHtml = '<link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />' +
                   '<link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />'
-
 
 var setup = function(swaggerDoc, options) {
 	options = options || {};
@@ -37,7 +37,7 @@ var setup = function(swaggerDoc, options) {
     };
 };
 
-var serve = serveStatic(__dirname + '/static');
+var serve = serveStatic(swaggerDist.getAbsoluteFSPath());
 
 var stringify = function(obj, prop) {
   var placeholder = '____FUNCTIONPLACEHOLDER____';
