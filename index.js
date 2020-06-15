@@ -25,7 +25,10 @@ var setup = function(swaggerDoc, explorer, options, customCss, customfavIcon) {
     var htmlWithCustomCss  = indexHTML.replace('<% customCss %>', customCss);
     var htmlWithFavIcon  = htmlWithCustomCss.replace('<% favIconString %>', favIconString);
 
-    return async function(ctx, next) { ctx.body = htmlWithFavIcon };
+    return function(ctx) {
+      ctx.type = 'html';
+      ctx.body = htmlWithFavIcon;
+    };
 };
 
 var serve = serveStatic(__dirname + '/static');
