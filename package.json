@@ -39,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/scottie1984/swagger-ui-koa/issues"
   },
-  "homepage": "https://github.com/Darmikon/swagger-ui-koa"
+  "homepage": "https://github.com/Darmikon/swagger-ui-koa",
+  "dependencies": {
+    "yamljs": "^0.3.0"
+  }
 }

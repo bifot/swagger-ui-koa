@@ -1,6 +1,7 @@
 'use strict'
 
 var fs = require('fs');
+var yaml = require('yamljs');
 
 var serveStatic = require('koa-static');
 
@@ -10,6 +11,16 @@ var favIconHtml = '<link rel="icon" type="image/png" href="./favicon-32x32.png" 
 
 var setup = function(swaggerDoc, explorer, options, customCss, customfavIcon) {
 	options = options || {};
+
+	// pass options as second param
+	if (typeof explorer === 'object') {
+	  options = explorer;
+  }
+
+	if (options.yaml) {
+	  swaggerDoc = yaml.parse(swaggerDoc);
+  }
+
   var explorerString = explorer ?  '' : '.swagger-ui .topbar .download-url-wrapper { display: none }';
     customCss = explorerString + ' ' + customCss || explorerString;
     customfavIcon = customfavIcon || false;
