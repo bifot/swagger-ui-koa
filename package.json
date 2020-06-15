@@ -23,9 +23,7 @@
   "engines": {
     "node": ">= v0.10.32"
   },
-  "devDependencies": {
-    "koa-static": "^3.0.0"
-  },
+  "devDependencies": {},
   "author": {
     "name": "Darmikon",
     "email": "hellfrom@mail.ru"
@@ -41,6 +39,7 @@
   },
   "homepage": "https://github.com/Darmikon/swagger-ui-koa",
   "dependencies": {
+    "koa-static": "^5.0.0",
     "yamljs": "^0.3.0"
   }
 }
