@@ -1,6 +1,6 @@
 {
   "name": "swagger-ui-koa",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Swagger UI Koa",
   "main": "./lib/index.js",
   "files": [
